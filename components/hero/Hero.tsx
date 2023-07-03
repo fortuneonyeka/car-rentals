@@ -10,7 +10,7 @@ const handleScroll = () => {
   return (
     <div className='hero'>
       <div className='flex-1 pt-36 padding-x '>
-        <h1 className='hero__title'>Find, Buy or Rent a car -- quickly and easily</h1>
+        <h1 className='hero__title'>Explore the most luxurious car collections</h1>
 
         <p className='hero__subtitle'> Streamline your car rental experience with our effortless booking process...</p>
 
@@ -20,6 +20,16 @@ const handleScroll = () => {
         px-4 rounded-full"
         handleClick={handleScroll}
         />
+      </div>
+
+      <div className='hero__image-container'>
+          <div className='hero__image'>
+              <Image  src="/Rolls-Royce.png" alt='hero'
+              fill
+              className='object-contain'
+              />
+          </div>
+          <div className='hero__image-overlay'/>
       </div>
     </div>
   )
