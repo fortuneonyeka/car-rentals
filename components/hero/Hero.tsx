@@ -16,7 +16,7 @@ const handleScroll = () => {
 
         <CustomButton 
         title="Explore Cars" 
-        containerStyles="bg-primary-blue text-white 
+        containerStyles="bg-indigo-400 hover:bg-indigo-200 hover:text-blue-600 text-white 
         px-4 rounded-full"
         handleClick={handleScroll}
         />
