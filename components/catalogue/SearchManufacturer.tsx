@@ -3,6 +3,7 @@ import { useState, Fragment } from "react";
 import { SearchManufacturerProps } from "@/types";
 import Image from "next/image";
 import { Combobox, Transition } from "@headlessui/react";
+import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import { manufacturers } from "@/constants/constants";
 
 const SearchManufacturer = ({
@@ -17,7 +18,7 @@ const SearchManufacturer = ({
 
   return (
     <div className="search-manufacturer">
-      <Combobox>
+      <Combobox value={manufacturer} onChange={setManufacturer}>
         <div className="relative w-full">
           <Combobox.Button className="absolute top-[14px]">
             <Image
@@ -27,6 +28,7 @@ const SearchManufacturer = ({
               height={20}
               className="ml-4"
             />
+            
           </Combobox.Button>
 
           <Combobox.Input
@@ -46,14 +48,33 @@ const SearchManufacturer = ({
             <Combobox.Options>
               { filteredManaufacturers.length === 0 && query !== '' ? (
                 <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
-                   Car Make not found
+                   {`${query} not found`}
                 </div>
               ) : (filteredManaufacturers.map((item) => (
                 <Combobox.Option key={item} className={({active}) => `relative 
                 search-manufacturer__option ${active ? 
-                  "bg-primary-blue text-white" : "text-gray-900"}`}
+                  "bg-green-600 rounded-xl text-white" : "text-gray-900"}`}
                 value={item}>
-                  {item}
+                  {({selected, active}) => (
+                    <>
+                     <span
+                          className={`block truncate ${
+                            selected ? 'font-medium' : 'font-normal'
+                          }`}
+                        >
+                          {item}
+                        </span>
+                        {selected ? (
+                          <span
+                            className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
+                              active ? 'text-white' : 'text-teal-600'
+                            }`}
+                          >
+                            <CheckIcon className="h-5 w-5 " aria-hidden="true" />
+                          </span>
+                        ) : null}
+                    </>
+              )}
                 </Combobox.Option>
               )
               ))}
