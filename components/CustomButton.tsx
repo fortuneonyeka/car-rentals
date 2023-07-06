@@ -2,7 +2,7 @@
 import { CustomButtonProps } from '@/types';
 import Image from 'next/image'
 
-const CustomButton = ({title, containerStyles, handleClick, btnType}: CustomButtonProps) => {
+const CustomButton = ({title, containerStyles, handleClick, btnType, textStyle, rightIcon}: CustomButtonProps) => {
   return (
     <button
     disabled={false}
@@ -11,7 +11,12 @@ const CustomButton = ({title, containerStyles, handleClick, btnType}: CustomButt
     onClick={ handleClick}
    
     >
-      <span className={`flex-1`}>{title}</span>
+      <span className={`flex-1 ${textStyle}`}>{title}</span>
+      {rightIcon && (
+        <div className='relative w-6 h-6'>
+          <Image  src={rightIcon} fill alt='right arrow'/>
+        </div>
+      )}
     </button>
   )
 }
