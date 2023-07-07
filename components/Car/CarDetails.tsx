@@ -38,11 +38,11 @@ const CarDetails = ({isOpen, car, closeModal}:CarDetailsProps) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto transform rounded-2xl bg:red-600">
                   <button type='button'
                   onClick={closeModal}
                   >
-                      <Image src={Close} alt='close' width={20} height={20} className='object-contain bg-red-600'/>
+                      <Image src={Close} alt='close' width={20} height={20} className='object-contain '/>
                   </button>
                 </Dialog.Panel>
               </Transition.Child>
