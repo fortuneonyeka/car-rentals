@@ -1,21 +1,5 @@
 import { MouseEventHandler } from "react";
 
-export interface CustomButtonProps {
-  title: string;
-  containerStyles?: string;
-  handleClick?: MouseEventHandler<HTMLButtonElement>;
-  btnType?: "button" | "submit";
-  textStyle?: string;
-  rightIcon?: string;
-  isDisabled?: boolean;
-}
-
-export interface SearchManufacturerProps {
-  manufacturer: string;
-  setManufacturer: (manufacturer: string) => void;
-  selected: string;
-  
-}
 export interface CarProps {
   city_mpg: number;
   class: string;
@@ -29,32 +13,67 @@ export interface CarProps {
   model: string;
   transmission: string;
   year: number;
-  id: number
+  id:number
 }
+
 export interface FilterProps {
-  manufacturer: string;
-  
-  year: number;
-  fuel: string;
-  limit: number;
+  manufacturer?: string;
+  year?: number;
+  model?: string;
+  limit?: number;
+  fuel?: string;
+}
+
+export type CarState = CarProps[] & { message?: string };
+
+export interface SearchBarProps {
+  setManuFacturer: (manufacturer: string) => void;
+  setModel: (model: string) => void;
+}
+
+
+export interface HomeProps {
+  searchParams: FilterProps;
+}
+
+export interface CarCardProps {
   model: string;
- 
+  make: string;
+  mpg: number;
+  transmission: string;
+  year: number;
+  drive: string;
+  cityMPG: number;
 }
 
-export interface OptionsProps {
-  title:string,
-  value:string
+export interface CustomButtonProps {
+  isDisabled?: boolean;
+  btnType?: "button" | "submit";
+  containerStyles?: string;
+  textStyles?: string;
+  title: string;
+  rightIcon?: string;
+  handleClick?: MouseEventHandler<HTMLButtonElement>;
 }
-export interface CustomFilterProps {
-title: string;
-  options: OptionsProps[];
-  setFilter: (e:string) => void
-  
+
+export interface OptionProps {
+  title: string;
+  value: string;
 }
+
+export interface CustomFilterProps<T> {
+  title: string;
+  options: OptionProps[];
+  setFilter: (selected: T) => void;
+}
+
 export interface ShowMoreProps {
-
-pageNumber:number
+  pageNumber: number;
   isNext: boolean;
-  setLimit: (e:number) => void
-  
+  setLimit: (limit: number) => void;
+}
+
+export interface SearchManuFacturerProps {
+  manufacturer: string;
+  setManuFacturer: (manufacturer: string) => void;
 }
