@@ -15,11 +15,11 @@ const SearchButton = ({otherClasses}:{otherClasses: string}) => (
   </button>
 )
 
-const SearchBar = ({setManufacturer, setModel}:FilterProps) => {
+const SearchBar = ({setManufacturer, setModel}) => {
   const [searchManufacturer, setSearchManufacturer] = useState('');
   const [searchModel, setSearchModel] = useState('');
 
-  const router = useRouter();
+ 
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
