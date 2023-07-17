@@ -2,17 +2,14 @@
 import { ShowMoreProps } from "@/types"
 import { useRouter } from "next/navigation"
 import CustomButton from "../CustomButton";
-import { updateSearchParams } from "@/utils";
 
 
-const ShowMore = ({isNext, pageNumber}:ShowMoreProps) => {
-  const router = useRouter();
+const ShowMore = ({isNext, setLimit, pageNumber}:ShowMoreProps) => {
+ 
   
   const handleNavigation = () => {
     const newLimit = (pageNumber + 1) * 10; 
-    const newPathname =  updateSearchParams("limit", `${newLimit}`)
-
-    router.push(newPathname)
+   setLimit(newLimit)
   }
   return (
     <div className="w-full flex-center gap-5 mt-10">
