@@ -7,7 +7,7 @@ import SearchBtnImg from "../../public/magnifying-glass.svg"
 import modelIcon from "../../public/model-icon.png"
 import Image from "next/image";
 import { Router } from "react-router-dom";
-import { FilterProps } from "@/types";
+import { SearchBarProps } from "@/types";
 
 const SearchButton = ({otherClasses}:{otherClasses: string}) => (
   <button type="submit" className={`-ml-11 z-10 ${otherClasses}`}>
@@ -15,7 +15,7 @@ const SearchButton = ({otherClasses}:{otherClasses: string}) => (
   </button>
 )
 
-const SearchBar = ({setManufacturer, setModel}) => {
+const SearchBar = ({setManuFacturer, setModel}: SearchBarProps) => {
   const [searchManufacturer, setSearchManufacturer] = useState('');
   const [searchModel, setSearchModel] = useState('');
 
@@ -28,7 +28,7 @@ const SearchBar = ({setManufacturer, setModel}) => {
     }
 
     setModel(searchModel)
-    setManufacturer(searchManufacturer) 
+    setManuFacturer(searchManufacturer) 
   };
 
  

@@ -1,6 +1,6 @@
 "use client";
 import { useState, Fragment } from "react";
-import { SearchManufacturerProps } from "@/types";
+import { SearchManuFacturerProps } from "@/types";
 import Image from "next/image";
 import { Combobox, Transition } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
@@ -9,7 +9,7 @@ import { manufacturers } from "@/constants/constants";
 const SearchManufacturer = ({
   selected,
   setSelected,
-}: SearchManufacturerProps) => {
+}: SearchManuFacturerProps) => {
   const [query, setQuery] = useState("");
 
   const filteredManaufacturers = query === "" ? manufacturers : manufacturers.filter((item) => (

@@ -83,7 +83,7 @@ const CarCard = ({ car }: CarCardProps) => {
             title="View More"
             containerStyles="w-full rounded-full py-[16px] bg-indigo-400
               hover:bg-indigo-200 "
-            textStyle="text-white text-[14px] leading-[17px] font-bold hover:text-blue-600"
+            textStyles="text-white text-[14px] leading-[17px] font-bold hover:text-blue-600"
             rightIcon="/right-arrow.svg"
             handleClick={() => setIsOpen(true)}
           />

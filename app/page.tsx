@@ -12,7 +12,7 @@ import { CarState } from '@/types';
 export default function Home() {
   const [allCars, setAllCars] = useState<CarState>([]);
   const [loading, setLoading] = useState(false)
-  const [manufacturer, setManufacturer] = useState("")
+  const [manufacturer, setManuFacturer] = useState("")
   const [year, setYear] = useState(2022)
   const [fuel, setFuel] = useState("")
   const [model, setModel] = useState("")
@@ -57,7 +57,7 @@ export default function Home() {
         </div>
 
         <div className='home__filters'>
-          <SearchBar  setManufacturer={setManufacturer}
+          <SearchBar  setManuFacturer={setManuFacturer}
           setModel={setModel} 
          
           />
