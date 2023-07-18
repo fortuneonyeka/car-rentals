@@ -1,12 +1,10 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import SearchManufacturer from "./SearchManufacturer";
 import SearchBtnImg from "../../public/magnifying-glass.svg"
 import modelIcon from "../../public/model-icon.png"
 import Image from "next/image";
-import { Router } from "react-router-dom";
 import { SearchBarProps } from "@/types";
 
 const SearchButton = ({otherClasses}:{otherClasses: string}) => (
